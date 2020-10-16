@@ -20,8 +20,6 @@ USER snotes
 
 COPY --chown=$UID:$GID Gemfile Gemfile.lock /syncing-server/
 
-RUN sed -i 's/bcrypt (3.1.13)/bcrypt (3.1.12)/g' Gemfile.lock
-
 RUN gem install bundler && bundle install
 
 COPY --chown=$UID:$GID . /syncing-server
