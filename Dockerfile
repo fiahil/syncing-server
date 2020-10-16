@@ -3,6 +3,8 @@ FROM --platform=linux/arm64 ruby:2.6.5-alpine
 ARG UID=1026
 ARG GID=100
 
+COPY qemu-arm-static /usr/bin
+
 RUN adduser -D -S snotes -g $GID -u $UID
 
 RUN apk add --update --no-cache \
