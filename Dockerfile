@@ -3,7 +3,7 @@ FROM --platform=linux/arm64 ruby:2.6.5-alpine
 ARG UID=1026
 ARG GID=100
 
-RUN addgroup -S snotes -g $GID && adduser -D -S snotes -G snotes -u $UID
+RUN adduser -D -S snotes -g $GID -u $UID
 
 RUN apk add --update --no-cache \
     alpine-sdk \
